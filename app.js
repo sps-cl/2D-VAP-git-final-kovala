@@ -8,8 +8,15 @@ function addTodo() {
   const odstranitTlacitko = document.createElement("button");
   odstranitTlacitko.className = "odstranit";
   odstranitTlacitko.innerText = "Odstranit";
+  odstranitTlacitko.addEventListener("click", removeTodo);
   polozka.appendChild(odstranitTlacitko);
   seznam.appendChild(polozka);
   text.value = "";
 }
+
+function removeTodo() {
+  const polozka = this.parentNode;
+  seznam.removeChild(polozka);
+}
+
 pridatTlacitko.addEventListener("click", addTodo);
